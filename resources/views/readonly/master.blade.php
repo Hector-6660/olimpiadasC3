@@ -17,16 +17,17 @@
 			<section id="header">
 				<header>
 					<span class="image avatar"><img src="{{ asset('/readonly/images/avatar.jpg') }}" alt="" /></span>
-					<h1 id="logo"><a href="#">Willis Corto</a></h1>
-					<p>I got reprogrammed by a rogue AI<br />
-					and now I'm totally cray</p>
+					<h1 id="logo"><a href="#">Olimpiadas</a></h1>
+                    <h1 id="logo"><a href="#">Informáticas Región</a></h1>
+                    <h1 id="logo"><a href="#">de Murcia</a></h1>
 				</header>
 				<nav id="nav">
 					<ul>
-						<li><a href="#one" class="active">About</a></li>
-						<li><a href="#two">Things I Can Do</a></li>
-						<li><a href="#three">A Few Accomplishments</a></li>
-						<li><a href="#four">Contact</a></li>
+						<li><a href="#one" class="active">Objetivos</a></li>
+						<li><a href="#two">Ediciones</a></li>
+						<li><a href="#three">Inscripciones</a></li>
+						<li><a href="#four">Resultados</a></li>
+                        <li><a href="#five">Patrocinadores</a></li>
 					</ul>
 				</nav>
 				<footer>
@@ -53,18 +54,28 @@
 								</div>
 								<div class="container">
 									<header class="major">
-										<h2>Read Only</h2>
-										<p>Just an incredibly simple responsive site<br />
-										template freebie by <a href="http://html5up.net">HTML5 UP</a>.</p>
+										<h2>Objetivos</h2>
 									</header>
-									<p>Faucibus sed lobortis aliquam lorem blandit. Lorem eu nunc metus col. Commodo id in arcu ante lorem ipsum sed accumsan erat praesent faucibus commodo ac mi lacus. Adipiscing mi ac commodo. Vis aliquet tortor ultricies non ante erat nunc integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum.</p>
-								</div>
+									<p>Las Olimpiada Informáticas de la Región de Murcia para los Institutos de Educación Secundaria y Centros Integrados de Formación Profesional tiene como objetivos:</p>
+
+                                    <ul>
+                                        <li>el fomento del trabajo en equipo, propiciando que los alumnos focalicen sus esfuerzos en conseguir
+                                            metas comunes, potenciando la sinergia que les lleve a obtener soluciones más rápidas y e�cientes
+                                            que de forma individual.</li>
+                                        <li>
+                                            El impulso de los estudios de Formación Profesional, particularmente de Informática, los cuales
+                                            tienen como finalidad la preparación de los alumnos para la actividad en este campo profesional. La
+                                            Formación Profesional proporciona a sus alumnos un aprendizaje polivalente, que les permite
+                                            adaptarse a las modificaciones laborales que pueden producirse a lo largo de su vida.
+                                        </li>
+                                    <ul>
+                                </div>
 							</section>
 
 						<!-- Two -->
 							<section id="two">
 								<div class="container">
-									<h3>Things I Can Do</h3>
+									<h3>Ediciones</h3>
 									<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer lorem ipsum dolor sit amet.</p>
 									<ul class="feature-icons">
 										<li class="icon solid fa-code">Write all the code</li>
@@ -78,57 +89,58 @@
 							</section>
 
 						<!-- Three -->
-							<section id="three">
-								<div class="container">
-									<h3>A Few Accomplishments</h3>
-									<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer. Integer eu ante ornare amet commetus.</p>
-									<div class="features">
-										<article>
-											<a href="#" class="image"><img src="{{ asset('/readonly/images/pic01.jpg') }}" alt="" /></a>
-											<div class="inner">
-												<h4>Possibly broke spacetime</h4>
-												<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
-											</div>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="{{ asset('/readonly/images/pic02.jpg') }}" alt="" /></a>
-											<div class="inner">
-												<h4>Terraformed a small moon</h4>
-												<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
-											</div>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="{{ asset('/readonly/images/pic03.jpg') }}" alt="" /></a>
-											<div class="inner">
-												<h4>Snapped dark matter in the wild</h4>
-												<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
-											</div>
-										</article>
-									</div>
-								</div>
-							</section>
+                            <section id="three">
+                                <div class="container">
+                                    <h3>Inscripciones</h3>
+                                    <p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer. Integer eu ante ornare amet commetus.</p>
+                                    <form method="post" action="#">
+                                        <div class="row gtr-uniform">
+                                            <div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
+                                            <div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
+                                            <div class="col-12"><input type="text" name="subject" id="subject" placeholder="Subject" /></div>
+                                            <div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="6"></textarea></div>
+                                            <div class="col-12">
+                                                <ul class="actions">
+                                                    <li><input type="submit" class="primary" value="Send Message" /></li>
+                                                    <li><input type="reset" value="Reset Form" /></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </section>
+
 
 						<!-- Four -->
-							<section id="four">
-								<div class="container">
-									<h3>Contact Me</h3>
-									<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer. Integer eu ante ornare amet commetus.</p>
-									<form method="post" action="#">
-										<div class="row gtr-uniform">
-											<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
-											<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
-											<div class="col-12"><input type="text" name="subject" id="subject" placeholder="Subject" /></div>
-											<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="6"></textarea></div>
-											<div class="col-12">
-												<ul class="actions">
-													<li><input type="submit" class="primary" value="Send Message" /></li>
-													<li><input type="reset" value="Reset Form" /></li>
-												</ul>
-											</div>
-										</div>
-									</form>
-								</div>
-							</section>
+                            <section id="four">
+                                <div class="container">
+                                    <h3>Patrocinadores</h3>
+                                    <p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer. Integer eu ante ornare amet commetus.</p>
+                                    <div class="features">
+                                        <article>
+                                            <a href="#" class="image"><img src="{{ asset('/readonly/images/pic01.jpg') }}" alt="" /></a>
+                                            <div class="inner">
+                                                <h4>Possibly broke spacetime</h4>
+                                                <p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
+                                            </div>
+                                        </article>
+                                        <article>
+                                            <a href="#" class="image"><img src="{{ asset('/readonly/images/pic02.jpg') }}" alt="" /></a>
+                                            <div class="inner">
+                                                <h4>Terraformed a small moon</h4>
+                                                <p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
+                                            </div>
+                                        </article>
+                                        <article>
+                                            <a href="#" class="image"><img src="{{ asset('/readonly/images/pic03.jpg') }}" alt="" /></a>
+                                            <div class="inner">
+                                                <h4>Snapped dark matter in the wild</h4>
+                                                <p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </section>
 
 						<!-- Five -->
 						<!--

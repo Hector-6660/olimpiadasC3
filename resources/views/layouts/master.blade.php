@@ -1,1 +1,1 @@
-@extends('readonly.master');
+@extends('readonly.master')

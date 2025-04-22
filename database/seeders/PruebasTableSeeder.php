@@ -13,15 +13,11 @@ class PruebasTableSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('categorias_ediciones')->truncate();
-        DB::table('patrocinadores')->truncate();
         DB::table('pruebas')->truncate();
 
         foreach (self::$pruebas as $prueba) {
             DB::table('pruebas')->insert([
                 'categorias_ediciones_id' => $prueba['categoria'],
-                // 'grado_id' => DB::table('grados')->where('nombre', self::$grados[$ciclo['grado']])->first()->id,
-                'patrocinadores_id' => DB::table('patrocinadores')->where('nombre', $prueba['patrocinador'])->first()->id,
                 'nombre' => $prueba['nombre'],
             ]);
         }

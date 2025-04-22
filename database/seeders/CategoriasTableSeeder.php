@@ -12,6 +12,7 @@ class CategoriasTableSeeder extends Seeder
      */
     public function run(): void
     {
+        \App\Models\Categoria::truncate();
         foreach (self::$categorias as $categoria) {
             \App\Models\Categoria::create([
                 'id' => $categoria['id'],

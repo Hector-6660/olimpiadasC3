@@ -47,7 +47,7 @@ class EdicionController extends Controller
 
         if ($request->hasFile('css_file')) {
             $edicion = Edicion::latest()->first();
-            $edicion->css_file = $request->file('css_file')->storeAs('ediciones');
+            $edicion->css_file = $request->file('css_file')->storeAs('ediciones' . DIRECTORY_SEPARATOR . 'edicion' . $edicion->id, 'main.css', 'public');
             $edicion->save();
         }
 
@@ -76,7 +76,7 @@ class EdicionController extends Controller
         ]);
 
         if ($request->hasFile('css_file')) {
-            $css_path = $request->file('css_file')->storeAs('ediciones' . DIRECTORY_SEPARATOR . $edicion->id, 'main.css', 'public');
+            $css_path = $request->file('css_file')->storeAs('ediciones' . DIRECTORY_SEPARATOR . 'edicion' . $edicion->id, 'main.css', 'public');
         }
 
         $edicion->update([

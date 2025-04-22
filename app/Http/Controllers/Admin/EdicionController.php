@@ -31,26 +31,25 @@ class EdicionController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'curso_escolar' => 'required|string|max:10',
-            'num_olimpiada' => 'required|integer',
-            'num_modding' => 'required|integer',
-            'num_videojuegos' => 'required|integer',
-            'fecha_celebracion' => 'required|date',
-            'fecha_apertura' => 'required|date',
-            'fecha_cierre' => 'required|date',
-            'css_file' => 'required|file'
+            'curso_escolar' => 'string|max:10',
+            'fecha_celebracion' => 'date',
+            'fecha_apertura' => 'date',
+            'fecha_cierre' => 'date',
+            'css_file' => 'file'
         ]);
 
         Edicion::create([
             'curso_escolar' => $request->curso_escolar,
-            'num_olimpiada' => $request->num_olimpiada,
-            'num_modding' => $request->num_modding,
-            'num_videojuegos' => $request->num_videojuegos,
             'fecha_celebracion' => $request->fecha_celebracion,
             'fecha_apertura' => $request->fecha_apertura,
             'fecha_cierre' => $request->fecha_cierre,
-            'css_file' => $request->file('css_file')->store('css_files', 'public')
         ]);
+
+        if ($request->hasFile('css_file')) {
+            $edicion = Edicion::latest()->first();
+            $edicion->css_file = $request->file('css_file')->storeAs('ediciones');
+            $edicion->save();
+        }
 
         return redirect()->route('ediciones.index')->with('success', 'Edición creada con éxito.');
     }
@@ -69,25 +68,23 @@ class EdicionController extends Controller
     public function update(Request $request, Edicion $edicion)
     {
         $request->validate([
-            'curso_escolar' => 'required|string|max:10',
-            'num_olimpiada' => 'required|integer',
-            'num_modding' => 'required|integer',
-            'num_videojuegos' => 'required|integer',
-            'fecha_celebracion' => 'required|date',
-            'fecha_apertura' => 'required|date',
-            'fecha_cierre' => 'required|date',
-            'css_file' => 'required|file'
+            'curso_escolar' => 'string|max:10',
+            'fecha_celebracion' => 'date',
+            'fecha_apertura' => 'date',
+            'fecha_cierre' => 'date',
+            'css_file' => 'file'
         ]);
+
+        if ($request->hasFile('css_file')) {
+            $css_path = $request->file('css_file')->storeAs('ediciones' . DIRECTORY_SEPARATOR . $edicion->id, 'main.css', 'public');
+        }
 
         $edicion->update([
             'curso_escolar' => $request->curso_escolar,
-            'num_olimpiada' => $request->num_olimpiada,
-            'num_modding' => $request->num_modding,
-            'num_videojuegos' => $request->num_videojuegos,
             'fecha_celebracion' => $request->fecha_celebracion,
             'fecha_apertura' => $request->fecha_apertura,
             'fecha_cierre' => $request->fecha_cierre,
-            'css_file' => $request->file('css_file')->store('css_files', 'public')
+            'css_file' => $request->hasFile('css_file') ? $css_path : $edicion->css_file,
         ]);
 
         return redirect()->route('ediciones.index')->with('success', 'Edición actualizada con éxito.');

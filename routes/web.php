@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\PruebaController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\ParticipanteController;
 use App\Http\Controllers\Admin\EdicionController;
+use App\Http\Controllers\SessionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +46,10 @@ Route::prefix('/dashboard')->middleware(['auth', 'verified'])->group(function ()
         ->parameters(['patrocinadores' => 'patrocinador']);
     Route::resource('pruebas', PruebaController::class);
     Route::resource('participantes', ParticipanteController::class);
+});
+
+Route::prefix('sessions')->group(function () {
+    Route::post('setEdicion', [SessionController::class, 'setEdicion'])->name('sessions.setEdicion');
 });
 
 Route::middleware('auth')->group(function () {

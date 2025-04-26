@@ -29,12 +29,16 @@
                         </section>
 
                     <!-- Three -->
-                        <section id="inscripciones">
-                            <div class="container">
-                                <h3>Inscripciones</h3>
+                    <section id="inscripciones">
+                        <div class="container">
+                            <h3>Inscripciones</h3>
+                            @can('inscripciones-abiertas')
                                 @include('partials.inscripciones.inscripcion_form')
-                            </div>
-                        </section>
+                            @else
+                                <p>Las inscripciones no están abiertas todavía. Lo estarán del {{ $edicion->fecha_apertura }} al {{ $edicion->fecha_cierre }}</p>
+                            @endcan
+                        </div>
+                    </section>
 
                     <!-- Four -->
                         <section id="resultados">

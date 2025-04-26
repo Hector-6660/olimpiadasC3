@@ -25,6 +25,10 @@ class SessionEdicion
             }
         }
 
+        if (session()->has('edicion')) {
+            view()->share('edicion', session('edicion'));
+        }
+
         return $next($request);
     }
 }

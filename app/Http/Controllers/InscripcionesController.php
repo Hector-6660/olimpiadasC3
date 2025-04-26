@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Ciclo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
@@ -11,6 +12,10 @@ class InscripcionesController extends Controller
 {
     public function store(Request $request)
     {
+        if (!Gate::allows('inscripciones-abiertas')) {
+            return redirect()->route('home')->withErrors(['inscripciones' => 'Las inscripciones están cerradas.']);
+        }
+
         // Documentación de la validación https://laravel.com/docs/10.x/validation#manually-creating-validators
         $validator = Validator::make($request->all(), [
             'centro' => 'required|numeric',

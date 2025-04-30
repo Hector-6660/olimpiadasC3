@@ -15,7 +15,7 @@
                         <thead>
                             <tr>
                                 <th class="px-4 py-2">ID</th>
-                                <th class="px-4 py-2">Palmares</th>
+                                <th class="px-4 py-2">Palmarés</th>
                                 <th class="px-4 py-2">Ediciones id</th>
                             </tr>
                         </thead>
@@ -24,6 +24,7 @@
                                 <tr>
                                     <td class="border px-4 py-2">{{ $resultado->id }}</td>
                                     <td class="border px-4 py-2">{{ $resultado->palmares }}</td>
+                                    <td class="border px-4 py-2">{{ $resultado->ediciones }}</td>
                                     <td class="border px-4 py-2">
                                         <a href="{{ route('resultados.edit', $resultado) }}" class="btn btn-sm btn-warning">Editar</a>
                                         <form action="{{ route('resultados.destroy', $resultado) }}" method="POST" class="inline">

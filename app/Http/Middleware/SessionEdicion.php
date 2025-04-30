@@ -6,6 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use App\Models\Edicion;
+use App\Models\Resultado;
 
 class SessionEdicion
 {
@@ -23,6 +24,16 @@ class SessionEdicion
             if ($edicion) {
                 session(['edicion' => $edicion]);
             }
+        }
+
+        // Compartir la edición actual con todas las vistas
+        if (session()->has('edicion')) {
+            $edicion = session('edicion');
+            view()->share('edicion', $edicion);
+
+            // Buscar el resultado correspondiente a la edición y compartirlo a todas las vistas
+            $resultado = Resultado::find($edicion->id);
+            view()->share('resultado', $resultado);
         }
 
         return $next($request);

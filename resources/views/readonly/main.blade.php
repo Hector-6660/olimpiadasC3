@@ -49,7 +49,11 @@
                                 <h3>Resultados</h3>
 
                                 <section>
-                                    <p>En este apartado irán apareciendo los resultados de las distintas categorías</p>
+                                    @if (isset($resultado))
+                                        {!! $resultado->palmares !!}
+                                    @else
+                                        <p>Los resultados de la edición actual no están disponibles.</p>
+                                    @endif
                                 </section>
                             </div>
                         </section>

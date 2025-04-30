@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Categoria;
 use App\Models\Resultado;
 use Illuminate\Http\Request;
 
@@ -16,16 +17,19 @@ class ResultadoController extends Controller
 
     public function create()
     {
-        return view('admin.resultados.create', compact('patrocinadores'));
+        $categorias = Categoria::all();
+        return view('admin.resultados.create', compact('categorias'));
     }
 
     public function store(Request $request)
     {
         $request->validate([
+            'id' => 'required',
             'palmares' => 'required',
         ]);
 
         Resultado::create([
+            'id' => $request->id,
             'palmares' => $request->palmares,
         ]);
 
@@ -40,9 +44,11 @@ class ResultadoController extends Controller
     public function update(Request $request, Resultado $resultado)
     {
         $request->validate([
+            'id' => 'required',
             'palmares' => 'required',
         ]);
 
+        $resultado->id = $request->id;
         $resultado->palmares = $request->palmares;
         $resultado->save();
 

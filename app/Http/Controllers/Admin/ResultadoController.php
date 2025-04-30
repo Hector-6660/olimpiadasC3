@@ -38,7 +38,8 @@ class ResultadoController extends Controller
 
     public function edit(Resultado $resultado)
     {
-        return view('admin.resultados.edit', compact('resultado'));
+        $categorias = Categoria::all();
+        return view('admin.resultados.edit', compact('resultado', 'categorias'));
     }
 
     public function update(Request $request, Resultado $resultado)

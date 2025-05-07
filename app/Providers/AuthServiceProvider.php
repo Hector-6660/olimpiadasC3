@@ -4,7 +4,15 @@ namespace App\Providers;
 
 // use Illuminate\Support\Facades\Gate;
 
+use App\Models\Categoria;
+use App\Models\Centro;
+use App\Models\Ciclo;
 use App\Models\Edicion;
+use App\Models\Grado;
+use App\Models\Grupo;
+use App\Models\Patrocinador;
+use App\Models\Prueba;
+use App\Models\Resultado;
 use App\Models\User;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
@@ -17,7 +25,15 @@ class AuthServiceProvider extends ServiceProvider
      * @var array<class-string, class-string>
      */
     protected $policies = [
-        //
+        Categoria::class => \App\Policies\CategoriaPolicy::class,
+        Centro::class => \App\Policies\CentroPolicy::class,
+        Ciclo::class => \App\Policies\CicloPolicy::class,
+        Edicion::class => \App\Policies\EdicionPolicy::class,
+        Grado::class => \App\Policies\GradoPolicy::class,
+        Grupo::class => \App\Policies\GrupoPolicy::class,
+        Patrocinador::class => \App\Policies\PatrocinadorPolicy::class,
+        Prueba::class => \App\Policies\PruebaPolicy::class,
+        Resultado::class => \App\Policies\ResultadoPolicy::class,
     ];
 
     /**

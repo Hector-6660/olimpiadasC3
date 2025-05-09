@@ -3,14 +3,18 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Grupo;
+use App\Providers\MoodleServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class GrupoController extends Controller
 {
-    public function __construct()
+    protected $moodleService;
+
+    public function __construct(MoodleServiceProvider $moodleService)
     {
         $this->authorizeResource(Grupo::class, 'grupo');
+        $this->moodleService = $moodleService;
     }
 
     /**
@@ -88,4 +92,12 @@ class GrupoController extends Controller
         return redirect()->route('grupos.index')->with('success', 'Grupo eliminado correctamente.');
     }
 
+    public function crearUsuarioMoodle(Grupo $grupo)
+    {
+        $resultado = $this->moodleService->createUserFromGrupo($grupo);
+        if (isset($resultado['error'])) {
+            $error = 'Error al crear el usuario en Moodle: ' . $resultado['error'];
+        }
+            return redirect()->route('grupos.index')->with('error', $error);
+    }
 }

@@ -19,6 +19,7 @@
                                 <th class="px-4 py-2">Fecha Apertura</th>
                                 <th class="px-4 py-2">Fecha Cierre</th>
                                 <th class="px-4 py-2">File CSS</th>
+                                <th class="px-4 py-2">Resultados</th>
                                 <th class="px-4 py-2">Acciones</th>
                             </tr>
                         </thead>
@@ -34,6 +35,13 @@
                                         @if ($edicion->css_file)
                                             <a href="{{ asset('storage/' . $edicion->css_file) }}" target="_blank" class="text-blue-500 underline">Ver archivo CSS</a>
                                         @endif
+                                    </td>
+                                    <td class="border px-4 py-2">
+                                        @foreach ($resultados as $resultado)
+                                            @if ($resultado->edicion->curso_escolar == $edicion->curso_escolar)
+                                                <a href="{{ route('resultados.edit', $resultado) }}" class="btn btn-sm btn-secondary">Resultados</a>
+                                            @endif
+                                        @endforeach
                                     </td>
 
                                     <td class="border px-4 py-2">

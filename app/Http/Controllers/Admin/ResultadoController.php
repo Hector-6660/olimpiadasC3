@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Resultado;
+use App\Models\Edicion;
 use Illuminate\Http\Request;
 
 class ResultadoController extends Controller
@@ -54,7 +55,7 @@ class ResultadoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Resultado $resultado)
+    public function show(Edicion $edicion, Resultado $resultado)
     {
         return view('admin.resultados.show', compact('resultado'));
     }

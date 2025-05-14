@@ -39,7 +39,7 @@
                                     <td class="border px-4 py-2">
                                         @foreach ($resultados as $resultado)
                                             @if ($resultado->edicion->curso_escolar == $edicion->curso_escolar)
-                                                <a href="{{ route('resultados.edit', $resultado) }}" class="btn btn-sm btn-secondary">Resultados</a>
+                                                <a href="{{ route('ediciones.resultados.show', ['edicion' => $edicion->id, 'resultado' => $resultado->id]) }}" class="btn btn-sm btn-secondary">Resultados</a>
                                             @endif
                                         @endforeach
                                     </td>

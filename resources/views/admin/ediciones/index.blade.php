@@ -37,11 +37,9 @@
                                         @endif
                                     </td>
                                     <td class="border px-4 py-2">
-                                        @foreach ($resultados as $resultado)
-                                            @if ($resultado->edicion->curso_escolar == $edicion->curso_escolar)
-                                                <a href="{{ route('ediciones.resultados.show', ['edicion' => $edicion->id, 'resultado' => $resultado->id]) }}" class="btn btn-sm btn-secondary">Resultados</a>
-                                            @endif
-                                        @endforeach
+                                        @if ($edicion->resultados)
+                                            <a href="{{ route('resultados.show', ['resultado' => $edicion->resultados->id]) }}" class="btn btn-sm btn-secondary">Resultados</a>
+                                        @endif
                                     </td>
 
                                     <td class="border px-4 py-2">

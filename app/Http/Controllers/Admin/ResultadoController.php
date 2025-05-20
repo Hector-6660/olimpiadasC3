@@ -55,7 +55,7 @@ class ResultadoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Edicion $edicion, Resultado $resultado)
+    public function show(Resultado $resultado)
     {
         return view('admin.resultados.show', compact('resultado'));
     }

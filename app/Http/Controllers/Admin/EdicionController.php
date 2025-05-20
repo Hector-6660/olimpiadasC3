@@ -15,8 +15,7 @@ class EdicionController extends Controller
     public function index()
     {
         $ediciones = Edicion::all();
-        $resultados = Resultado::all();
-        return view('admin.ediciones.index', compact('ediciones', 'resultados'));
+        return view('admin.ediciones.index', compact('ediciones'));
     }
 
     /**

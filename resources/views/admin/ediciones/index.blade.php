@@ -38,7 +38,7 @@
                                     </td>
                                     <td class="border px-4 py-2">
                                         @if ($edicion->resultados)
-                                            <a href="{{ route('resultados.show', ['resultado' => $edicion->resultados->id]) }}" class="btn btn-sm btn-secondary">Resultados</a>
+                                            <a href="{{ route('resultados.show', ['resultado' => $edicion->resultados]) }}" class="btn btn-sm btn-secondary">Resultados</a>
                                         @endif
                                     </td>
 
